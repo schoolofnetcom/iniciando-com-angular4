@@ -1,0 +1,22 @@
+<h3>Produtos</h3>
+
+<a [routerLink]="['/products/new']" class="btn btn-primary">Novo</a>
+
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <th>#</th>
+    <th>Título</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let product of products">
+    <td>{{ product.id }}</td>
+    <td>{{ product.title }}</td>
+    <td>
+      <a [routerLink]="['/products/' + product.id]" class="btn btn-default btn-xs">ver</a>
+    </td>
+  </tr>
+  </tbody>
+</table>

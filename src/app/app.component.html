@@ -1,0 +1,22 @@
+<header id="header">
+  <div class="navbar navbar-inverse navbar-static-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a href="/" class="navbar-brand">iStock</a>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a [routerLink]="['/products']">Produtos</a></li>
+        <li><a href="/stock-in">Entrada de estoque</a></li>
+        <li><a href="/stock-out">Saída de estoque</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <h1 class="text-center">Gerenciamento de estoque</h1>
+
+</header>
+<main>
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+</main>

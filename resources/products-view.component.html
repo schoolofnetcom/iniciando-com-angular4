@@ -1,0 +1,84 @@
+<h3>Detalhes do produto</h3>
+
+<div class="navbar navbar-default">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav">
+      <li><a [routerLink]="['/products/' + product.id + '/edit']">editar</a></li>
+      <li><a [routerLink]="['/products/' + product.id + '/remove']">remover</a></li>
+    </ul>
+  </div>
+</div>
+
+<table class="table table-hover">
+  <tr>
+    <th>Título</th>
+    <td>{{ product.title }}</td>
+  </tr>
+  <tr *ngIf="product.stock">
+    <th>Estoque atual</th>
+    <td>{{ product.stock.quantity }}</td>
+  </tr>
+  <tr>
+    <th>Preço</th>
+    <td>{{ product.price }}</td>
+  </tr>
+  <tr>
+    <th>Custo</th>
+    <td>{{ product.cost }}</td>
+  </tr>
+  <tr>
+    <th>Descrição</th>
+    <td>{{ product.description }}</td>
+  </tr>
+  <tr>
+    <th>Aviso pouco estoque</th>
+    <td>{{ product.alert_quantity }}</td>
+  </tr>
+  <tr>
+    <th></th>
+    <td></td>
+  </tr>
+</table>
+
+<div class="row">
+  <div class="col-md-6" *ngIf="product.stock_in !== undefined">
+
+  <h4>Entrada de estoque</h4>
+
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <th>Quantidade</th>
+      <th>Data</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let stock of product.stock_in">
+      <td>{{ stock.quantity }}</td>
+      <td>{{ stock.created | date: 'dd/MM/yyyy hh:mm' }}</td>
+    </tr>
+    </tbody>
+  </table>
+
+  </div>
+  <div class="col-md-6" *ngIf="product.stock_out !== undefined">
+
+  <h4>Saída de estoque</h4>
+
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <th>Quantidade</th>
+      <th>Data</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let stock of product.stock_out">
+      <td>{{ stock.quantity }}</td>
+      <td>{{ stock.created | date: 'dd/MM/yyyy hh:mm' }}</td>
+    </tr>
+    </tbody>
+  </table>
+
+  </div>
+</div>

@@ -1,0 +1,30 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3 {
+    font-family: 'Droid Serif', serif;
+    font-weight: bold;
+}
+
+#header {
+    background: url("../images/background.jpg") no-repeat center top fixed;
+    background-size: cover;
+    background-color: #34495e;
+    padding: 20px 40px 40px 40px;
+    border-bottom: 1px solid #2c3e50;
+}
+
+#header h1 {
+    padding-top: 20px;
+    font-size: 44px;
+}
+
+.table tr td:last-child, .table tr th:last-child {
+    text-align: right;
+}
+
+main {
+    margin-top: 30px;
+    display: block;
+}
